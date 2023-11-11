@@ -126,6 +126,31 @@ namespace App.Repository
             .ToListAsync();
             return result;
         }
-    
+
+        //8. Devuelve un listado de los `profesores` junto con el nombre del `departamento` al que están vinculados. El listado debe devolver cuatro columnas, `primer apellido, segundo apellido, nombre y nombre del departamento.` El resultado estará ordenado alfabéticamente de menor a mayor por los `apellidos y el nombre.`
+
+        public async Task<IEnumerable<object>> Get8()
+        {
+            var result = await
+            (
+                from p in _context.Persons
+                where p.IdPersonTypeFk == 2
+                join t in _context.Teachers on p.Id equals t.IdPersonFk
+                join d in _context.Departaments on t.IdDepartamentFk equals d.Id
+                orderby p.LastName1 , p.LastName2 , p.FirstName 
+                select new
+                {
+                    ApellidoUno = p.LastName1,
+                    ApellidoDos = p.LastName2,
+                    Nombre = p.FirstName,
+                    DNI = p.DNI,
+                    IdDepartamento = p.Id,
+                    Departamento = d.Name
+                }
+            )
+            .Distinct()
+            .ToListAsync();
+            return result;
+        }
     }
 }

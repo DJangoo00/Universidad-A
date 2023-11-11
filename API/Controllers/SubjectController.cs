@@ -108,5 +108,23 @@ public class SubjectController : BaseApiController
         return mapper.Map<List<SubjectDto>>(entidad);
     }
 
-    
+    [HttpGet("7")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<SubjectDto>>> Get7()
+    {
+        var entidad = await unitofwork.Subjects.Get7();
+        return mapper.Map<List<SubjectDto>>(entidad);
+    }
+
+    [HttpGet("9")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get9()
+    {
+        var entidad = await unitofwork.Subjects.Get9();
+        return mapper.Map<List<object>>(entidad);
+    }
 }

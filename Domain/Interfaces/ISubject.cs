@@ -9,6 +9,7 @@ namespace Domain.Interfaces
     public interface ISubject : IGenericRepository<Subject>
     {
         Task<IEnumerable<Subject>> Get5();
-        
+        Task<IEnumerable<Subject>> Get7();
+        Task<IEnumerable<object>> Get9();
     }
 }

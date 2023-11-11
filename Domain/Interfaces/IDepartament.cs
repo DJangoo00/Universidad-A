@@ -8,6 +8,6 @@ namespace Domain.Interfaces
 {
     public interface IDepartament : IGenericRepository<Departament>
     {
-        
+        Task<IEnumerable<object>> Get10();
     }
 }

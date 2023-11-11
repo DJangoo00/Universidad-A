@@ -13,5 +13,6 @@ namespace Domain.Interfaces
         Task<IEnumerable<object>> Get3();
         Task<IEnumerable<object>> Get4();
         Task<IEnumerable<object>> Get6();
+        Task<IEnumerable<object>> Get8();
     }
 }

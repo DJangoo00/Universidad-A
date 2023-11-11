@@ -97,6 +97,16 @@ public class DepartamentController : BaseApiController
         await unitofwork.SaveAsync();
         return NoContent();
     }
+
     //consultas avanzadas
+    [HttpGet("10")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get10()
+    {
+        var entidad = await unitofwork.Departaments.Get10();
+        return mapper.Map<List<object>>(entidad);
+    }
     
 }

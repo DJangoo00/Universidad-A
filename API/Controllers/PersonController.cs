@@ -149,4 +149,13 @@ public class PersonController : BaseApiController
         return mapper.Map<List<object>>(entidad);
     }
 
+    [HttpGet("8")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get8()
+    {
+        var entidad = await unitofwork.Persons.Get8();
+        return mapper.Map<List<object>>(entidad);
+    }
 }
