@@ -98,5 +98,15 @@ public class SubjectController : BaseApiController
         return NoContent();
     }
     //consultas avanzadas
+    [HttpGet("5")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<SubjectDto>>> Get5()
+    {
+        var entidad = await unitofwork.Subjects.Get5();
+        return mapper.Map<List<SubjectDto>>(entidad);
+    }
+
     
 }

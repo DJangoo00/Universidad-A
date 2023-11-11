@@ -27,10 +27,8 @@ Listado de requerimientos
 Versiones implementadas
 
 1. V1.0
-    Caracteristicas de esta version.
+    Unica version desarrollada(default).
 
-2. V1.1
-    Caracteristicas de esta version.
 
 
 ## Uso 🕹
@@ -120,9 +118,6 @@ Para el desarrollo de las consultas se analizaron las variables de estas para da
 
 #### 1. Listado de endpoints especificos.
 **Version**: `1.0`
-**Endpoint**: `URL de endpoint`
-
-**Version**: `1.1`
 **Endpoint**: `URL de endpoint`
 
 

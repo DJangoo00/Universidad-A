@@ -99,4 +99,54 @@ public class PersonController : BaseApiController
     }
     //consultas avanzadas
     
+    [HttpGet("1")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get1()
+    {
+        var entidad = await unitofwork.Persons.Get1();
+        return mapper.Map<List<object>>(entidad);
+    }
+
+    [HttpGet("2")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get2()
+    {
+        var entidad = await unitofwork.Persons.Get2();
+        return mapper.Map<List<object>>(entidad);
+    }
+
+    [HttpGet("3")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get3()
+    {
+        var entidad = await unitofwork.Persons.Get3();
+        return mapper.Map<List<object>>(entidad);
+    }
+
+    [HttpGet("4")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get4()
+    {
+        var entidad = await unitofwork.Persons.Get4();
+        return mapper.Map<List<object>>(entidad);
+    }
+
+    [HttpGet("6")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get6()
+    {
+        var entidad = await unitofwork.Persons.Get6();
+        return mapper.Map<List<object>>(entidad);
+    }
+
 }
