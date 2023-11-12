@@ -208,7 +208,7 @@ Para el desarrollo de las consultas se analizaron las variables de estas para da
 
 -   C#
 
-### Dependencias Usadas 📦
+### Dependencias Añadidas 📦
 
 -   "AspNetCoreRateLimit" Version="5.0.0"
 -   "AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1"
@@ -231,7 +231,7 @@ Para el desarrollo de las consultas se analizaron las variables de estas para da
 
 > Estructura General.
 
-![](.\Img\DbStructure.png)
+![](./Img/DbStructure.png)
 
 ## Informacion de la DataBase 🧱
-Esta se encuentra en e; archivo DbInsert
+Esta se encuentra en el archivo DbInsert.txt
