@@ -1,6 +1,7 @@
-# Ssekeleton 2.0 API
+# Universidad A
 
-Introduccion y descripcion del proyecto
+**Contexto**
+Una universidad busca implementar una base de datos para gestionar la información de sus estudiantes, profesores, cursos y asignaturas. La base de datos se suministra con la información necesaria para facilitar el seguimiento de la asignación de profesores a cursos y asignaturas. La universidad proporciona los enunciados de las consultas específicas que se deben realizar en la base de datos, con el objetivo de obtener información relevante según sus necesidades, como la carga laboral de los profesores y otros aspectos cruciales para la gestión académica.
 
 
 [![GitHub](https://badgen.net/badge/icon/github?icon=github&label)](https://github.com)
@@ -19,24 +20,18 @@ Introduccion y descripcion del proyecto
 
 Listado de requerimientos
 
-## Consultas Propuestas 📋
-
-1. Listado de consultas propuestas
-
 ## Versiones Disponibles 📈
 Versiones implementadas
 
 1. V1.0
     Unica version desarrollada(default).
 
-
-
 ## Uso 🕹
 
-Descripcion del uso
+Descripcion del uso:
 
 **Versionado**
-Para la implementacion de las versiones se puede realizar desde Header como en la imagen o desde Query con la key ver=1.0
+Para la implementacion de las versiones se puede realizar desde Header como en la imagen o desde Query con la key ver=1.0 (no es necesario indicar la version)
 ![](./Readme_Img/V1.1.png.png)
 
 
@@ -117,8 +112,89 @@ Para el desarrollo de las consultas se analizaron las variables de estas para da
 
 
 #### 1. Listado de endpoints especificos.
-**Version**: `1.0`
-**Endpoint**: `URL de endpoint`
+
+
+**Consulta**: `1. Devuelve un listado con el primer apellido, segundo apellido y el nombre de todos los alumnos. El listado deberá estar ordenado alfabéticamente de menor a mayor por el primer apellido, segundo apellido y nombre.`
+**Endpoint**: `http://localhost:5051/api/Person/1`
+
+
+**Consulta**: `2. Averigua el nombre y los dos apellidos de los alumnos que **no** han dado de alta su número de teléfono en la base de datos.`
+**Endpoint**: `http://localhost:5051/api/Person/2`
+
+
+**Consulta**: `3. Devuelve el listado de los alumnos que nacieron en "1999".`
+**Endpoint**: `http://localhost:5051/api/Person/3`
+
+
+**Consulta**: `4. Devuelve el listado de "profesores" que **no** han dado de alta su número de teléfono en la base de datos y además su nif termina en "K".`
+**Endpoint**: `http://localhost:5051/api/Person/4`
+
+
+**Consulta**: `5. Devuelve el listado de las asignaturas que se imparten en el primer cuatrimestre, en el tercer curso del grado que tiene el identificador "7".`
+**Endpoint**: `http://localhost:5051/api/Subject/5`
+
+
+**Consulta**: `6. Devuelve un listado con los datos de todas las **alumnas** que se han matriculado alguna vez en el "Grado en Ingeniería Informática (Plan 2015)".`
+**Endpoint**: `http://localhost:5051/api/Person/6`
+
+
+**Consulta**: `7. Devuelve un listado con todas las asignaturas ofertadas en el "Grado en Ingeniería Informática (Plan 2015)".`
+**Endpoint**: `http://localhost:5051/api/Subject/7`
+
+
+**Consulta**: `8. Devuelve un listado de los "profesores" junto con el nombre del "departamento" al que están vinculados. El listado debe devolver cuatro columnas, "primer apellido, segundo apellido, nombre y nombre del departamento." El resultado estará ordenado alfabéticamente de menor a mayor por los "apellidos y el nombre."`
+**Endpoint**: `http://localhost:5051/api/Person/8`
+
+
+**Consulta**: `9. Devuelve un listado con el nombre de las asignaturas, año de inicio y año de fin del curso escolar del alumno con nif "26902806M".`
+**Endpoint**: `http://localhost:5051/api/Subject/9`
+
+
+**Consulta**: `10. Devuelve un listado con el nombre de todos los departamentos que tienen profesores que imparten alguna asignatura en el "Grado en Ingeniería Informática (Plan 2015)".`
+**Endpoint**: `http://localhost:5051/api/Departament/10`
+
+
+**Consulta**: `11. Devuelve un listado con todos los alumnos que se han matriculado en alguna asignatura durante el curso escolar 2018/2019.`
+**Endpoint**: `http://localhost:5051/api/Person/11`
+
+
+**Consulta**: `12. Devuelve un listado con los nombres de **todos** los profesores y los departamentos que tienen vinculados. El listado también debe mostrar aquellos profesores que no tienen ningún departamento asociado. El listado debe devolver cuatro columnas, nombre del departamento, primer apellido, segundo apellido y nombre del profesor. El resultado estará ordenado alfabéticamente de menor a mayor por el nombre del departamento, apellidos y el nombre.`
+**Endpoint**: `http://localhost:5051/api/Person/12`
+
+
+**Consulta**: `13. Devuelve un listado con los profesores que no están asociados a un departamento.Devuelve un listado con los departamentos que no tienen profesores asociados.`
+**Endpoint**: `http://localhost:5051/api/Person/13`
+
+
+**Consulta**: `14. Devuelve un listado con los profesores que no imparten ninguna asignatura.`
+**Endpoint**: `http://localhost:5051/api/Person/14`
+
+
+**Consulta**: `17. Devuelve el número total de **alumnas** que hay.`
+**Endpoint**: `http://localhost:5051/api/Person/17`
+
+
+**Consulta**: `18. Calcula cuántos alumnos nacieron en "1999".`
+**Endpoint**: `http://localhost:5051/api/Person/18`
+
+
+**Consulta**: `19. Calcula cuántos profesores hay en cada departamento. El resultado sólo debe mostrar dos columnas, una con el nombre del departamento y otra con el número de profesores que hay en ese departamento. El resultado sólo debe incluir los departamentos que tienen profesores asociados y deberá estar ordenado de mayor a menor por el número de profesores.`
+**Endpoint**: `http://localhost:5051/api/Person/19`
+
+
+**Consulta**: `24. Devuelve un listado que muestre cuántos alumnos se han matriculado de alguna asignatura en cada uno de los cursos escolares. El resultado deberá mostrar dos columnas, una columna con el año de inicio del curso escolar y otra con el número de alumnos matriculados.`
+**Endpoint**: `http://localhost:5051/api/Person/24`
+
+
+**Consulta**: `26. Devuelve todos los datos del alumno más joven.`
+**Endpoint**: `http://localhost:5051/api/Person/26`
+
+
+**Consulta**: `27. Devuelve un listado con los profesores que no están asociados a un departamento.`
+**Endpoint**: `http://localhost:5051/api/Person/27`
+
+**Consulta**: `29. Devuelve un listado con los profesores que tienen un departamento asociado y que no imparten ninguna asignatura.`
+**Endpoint**: `http://localhost:5051/api/Person/29`
 
 
 
@@ -155,4 +231,7 @@ Para el desarrollo de las consultas se analizaron las variables de estas para da
 
 > Estructura General.
 
-![](./Readme_Img/DB-structure.png)
+![](.\Img\DbStructure.png)
+
+## Informacion de la DataBase 🧱
+Esta se encuentra en e; archivo DbInsert
