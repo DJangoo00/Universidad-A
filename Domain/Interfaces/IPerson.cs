@@ -21,6 +21,9 @@ namespace Domain.Interfaces
         Task<IEnumerable<object>> Get17();
         Task<IEnumerable<object>> Get18();
         Task<IEnumerable<object>> Get19();
+        Task<IEnumerable<object>> Get24();
         Task<object> Get26();
+        Task<IEnumerable<object>> Get27();
+        Task<IEnumerable<object>> Get29();
     }
 }

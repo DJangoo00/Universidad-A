@@ -274,7 +274,7 @@ namespace App.Repository
             where p.IdPersonTypeFk == 2
             join t in _context.Teachers on p.Id equals t.IdPersonFk
             join d in _context.Departaments on t.IdDepartamentFk equals d.Id
-            group new {p,t,d} by d.Name into dp
+            group new { p, t, d } by d.Name into dp
             select new
             {
                 Departamento = dp.Key,
@@ -287,6 +287,23 @@ namespace App.Repository
         }
 
         //24. Devuelve un listado que muestre cuántos alumnos se han matriculado de alguna asignatura en cada uno de los cursos escolares. El resultado deberá mostrar dos columnas, una columna con el año de inicio del curso escolar y otra con el número de alumnos matriculados.
+        public async Task<IEnumerable<object>> Get24()
+        {
+            var result = await (
+                from sr in _context.SubjectsRegisters
+                join sc in _context.SchoolarsCurses on sr.IdSchoolarCurseFk equals sc.Id
+                group new { sr, sc } by sc.Start into srcGroup
+                orderby srcGroup.Count() descending
+                select new
+                {
+                    Inicio = srcGroup.Key,
+                    Estudiantes = srcGroup.Count()
+                }
+            )
+            .ToListAsync();
+            return result;
+        }
+
 
         //26. Devuelve todos los datos del alumno más joven.
         public async Task<object> Get26()
@@ -308,8 +325,47 @@ namespace App.Repository
             return result;
         }
 
-        //27. Devuelve un listado con los profesores que no están asociados a un departamento.
+        //27. Devuelve un listado con los profesores que no están asociados  a un departamento.
+        public async Task<IEnumerable<object>> Get27()
+        {
+            var result = await (
+            from p in _context.Persons
+            where p.IdPersonTypeFk == 2
+            where !_context.Teachers.Any(t => t.IdPersonFk == p.Id)
+            orderby p.Id
+            select new
+            {
+                Id = p.Id,
+                DNI = p.DNI,
+                Nombre = p.FirstName,
+                ApellidoUno = p.LastName1,
+                ApellidoDos = p.LastName2,
+            }
+            )
+            .ToListAsync();
+            return result;
+        }
 
         //29. Devuelve un listado con los profesores que tienen un departamento asociado y que no imparten ninguna asignatura.
+        public async Task<IEnumerable<object>> Get29()
+        {
+            var result = await (
+            from p in _context.Persons
+            where p.IdPersonTypeFk == 2
+            join t in _context.Teachers on p.Id equals t.IdPersonFk
+            where !_context.Subjects.Any(s => s.IdTeacherFk == t.Id)
+            orderby p.Id
+            select new
+            {
+                Id = p.Id,
+                DNI = p.DNI,
+                Nombre = p.FirstName,
+                ApellidoUno = p.LastName1,
+                ApellidoDos = p.LastName2,
+            }
+            )
+            .ToListAsync();
+            return result;
+        }
     }
 }

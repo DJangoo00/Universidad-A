@@ -228,6 +228,15 @@ public class PersonController : BaseApiController
         var entidad = await unitofwork.Persons.Get19();
         return mapper.Map<List<object>>(entidad);
     }
+    [HttpGet("24")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get24()
+    {
+        var entidad = await unitofwork.Persons.Get24();
+        return mapper.Map<List<object>>(entidad);
+    }
 
     [HttpGet("26")]
     [MapToApiVersion("1.0")]
@@ -241,5 +250,25 @@ public class PersonController : BaseApiController
             return NotFound();
         }
         return this.mapper.Map<object>(entidad);
+    }
+
+    [HttpGet("27")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get27()
+    {
+        var entidad = await unitofwork.Persons.Get27();
+        return mapper.Map<List<object>>(entidad);
+    }
+
+    [HttpGet("29")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get29()
+    {
+        var entidad = await unitofwork.Persons.Get29();
+        return mapper.Map<List<object>>(entidad);
     }
 }

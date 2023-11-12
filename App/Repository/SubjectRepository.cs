@@ -73,7 +73,7 @@ namespace App.Repository
             return result;
         }
 
-        //15. Devuelve un listado con las asignaturas que no tienen un profesor asignado.
+        //15. Devuelve un listado con las asignaturas que no tienen un profesor asignado.   
 
         //25. Devuelve un listado con el número de asignaturas que imparte cada profesor. El listado debe tener en cuenta aquellos profesores que no imparten ninguna asignatura. El resultado mostrará cinco columnas: id, nombre, primer apellido, segundo apellido y número de asignaturas. El resultado estará ordenado de mayor a menor por el número de asignaturas.
 
