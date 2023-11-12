@@ -14,5 +14,13 @@ namespace Domain.Interfaces
         Task<IEnumerable<object>> Get4();
         Task<IEnumerable<object>> Get6();
         Task<IEnumerable<object>> Get8();
+        Task<IEnumerable<object>> Get11();
+        Task<IEnumerable<object>> Get12();
+        Task<IEnumerable<object>> Get13();
+        Task<IEnumerable<object>> Get14();
+        Task<IEnumerable<object>> Get17();
+        Task<IEnumerable<object>> Get18();
+        Task<IEnumerable<object>> Get19();
+        Task<object> Get26();
     }
 }

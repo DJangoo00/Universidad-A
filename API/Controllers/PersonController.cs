@@ -158,4 +158,88 @@ public class PersonController : BaseApiController
         var entidad = await unitofwork.Persons.Get8();
         return mapper.Map<List<object>>(entidad);
     }
+
+    [HttpGet("11")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get11()
+    {
+        var entidad = await unitofwork.Persons.Get11();
+        return mapper.Map<List<object>>(entidad);
+    }
+
+    [HttpGet("12")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get12()
+    {
+        var entidad = await unitofwork.Persons.Get12();
+        return mapper.Map<List<object>>(entidad);
+    }
+
+    [HttpGet("13")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get13()
+    {
+        var entidad = await unitofwork.Persons.Get13();
+        return mapper.Map<List<object>>(entidad);
+    }
+
+    [HttpGet("14")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get14()
+    {
+        var entidad = await unitofwork.Persons.Get14();
+        return mapper.Map<List<object>>(entidad);
+    }
+
+    [HttpGet("17")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get17()
+    {
+        var entidad = await unitofwork.Persons.Get17();
+        return mapper.Map<List<object>>(entidad);
+    }
+
+    [HttpGet("18")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get18()
+    {
+        var entidad = await unitofwork.Persons.Get18();
+        return mapper.Map<List<object>>(entidad);
+    }
+
+    [HttpGet("19")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<IEnumerable<object>>> Get19()
+    {
+        var entidad = await unitofwork.Persons.Get19();
+        return mapper.Map<List<object>>(entidad);
+    }
+
+    [HttpGet("26")]
+    [MapToApiVersion("1.0")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<ActionResult<object>> Get26()
+    {
+        var entidad = await unitofwork.Persons.Get26();
+        if (entidad == null)
+        {
+            return NotFound();
+        }
+        return this.mapper.Map<object>(entidad);
+    }
 }
